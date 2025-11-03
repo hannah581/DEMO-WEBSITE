@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>St Patricks Festival - Online Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>St.Patricks Festival</h1>
+      <nav>
+        <button id="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+      </nav>
+    </header>
+    <main>
+      <section id="products">
+        <!-- Product cards will be rendered here -->
+      </section>
+      <section id="cart-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close" id="close-cart">&times;</span>
+          <h2>Your Cart</h2>
+          <ul id="cart-items"></ul>
+          <div id="cart-total"></div>
+          <button id="checkout-btn">Checkout</button>
+        </div>
+      </section>
+      <section id="checkout-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close" id="close-checkout">&times;</span>
+          <h2>Checkout</h2>
+          <form id="checkout-form">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <input type="text" placeholder="Address" required />
+            <div style="margin-bottom: 1rem;">
+              <label style="font-weight:bold;">Size:</label><br>
+              <select name="size" required style="width:100%;padding:0.5rem;margin-top:4px;border-radius:8px;border:1px solid #ccc;">
+                <option value="">Select size</option>
+                <option value="S">Small (S)</option>
+                <option value="M">Medium (M)</option>
+                <option value="L">Large (L)</option>
+                <option value="XL">Extra Large (XL)</option>
+              </select>
+            </div>
+            <div style="margin-bottom: 1rem;">
+              <label style="font-weight:bold;">Payment Method:</label><br>
+              <label><input type="radio" name="payment" value="paypal" required> PayPal</label>
+              <label style="margin-left:12px;"><input type="radio" name="payment" value="applepay"> Apple Pay</label>
+              <label style="margin-left:12px;"><input type="radio" name="payment" value="googlepay"> Google Pay</label>
+            </div>
+            <button type="submit">Place Order</button>
+          </form>
+          <div
+            id="order-success"
+            class="hidden"
+            style="
+              background-color: #28a745;
+              color: #fff;
+              padding: 16px;
+              border-radius: 8px;
+              text-align: center;
+            "
+          >
+            <span style="font-size: 1.2em"
+              >🍀 Thank you for your order! Happy St. Patrick's Festival!
+              🍀</span
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 St Patricks Festival. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
